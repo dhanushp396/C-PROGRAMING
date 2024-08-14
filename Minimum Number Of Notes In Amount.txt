@@ -1,0 +1,37 @@
+#include<stdio.h>
+main()
+{
+	int a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r;
+	
+	printf("Enter the amount : ");
+	scanf("%d",&a);
+	
+	b=a/500;
+	c=a-(b*500);
+	d=c/200;
+	e=c-(d*200);
+	f=e/100;
+	g=e-(f*100);
+	h=g/50;
+	i=g-(h*50);
+	j=i/20;
+	k=i-(j*20);
+	l=k/10;
+	m=k-(l*10);
+	n=m/5;
+	o=m-(n*5);
+	p=o/2;
+	q=o-(p*2);
+	r=q/1;
+	
+	printf("  \n");
+	printf("500 notes = %d \n",b);
+	printf("200 notes = %d \n",d);
+	printf("100 notes = %d \n",f);
+	printf("50 notes = %d \n",h);
+	printf("20 notes = %d \n",j);
+	printf("10 notes = %d \n",l);
+	printf("5 notes = %d \n",n);
+	printf("2 notes = %d \n",p);
+	printf("1 notes = %d \n",r);
+}
