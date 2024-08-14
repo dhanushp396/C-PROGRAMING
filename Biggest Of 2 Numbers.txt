@@ -1,0 +1,15 @@
+#include<stdio.h>
+main()
+{
+int a,b;
+printf("Enter A value : ");
+scanf("%d",&a);
+printf("Enter B value : ");
+scanf("%d",&b);
+if (a>b)
+printf("%d is bigger value.",a);
+else if (b>a)
+printf("%d is bigger value.",b);
+else
+printf("Both are equal.");
+}
