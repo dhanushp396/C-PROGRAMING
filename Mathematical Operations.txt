@@ -1,0 +1,18 @@
+#include<stdio.h>
+main()
+{
+int number1, number2, addition, subtraction, multiplication;
+float division, modulo;
+printf("Enter two numbers :\n");
+scanf("%d%d",&number1,&number2);
+addition=number1+number2;
+subtraction=number1-number2;
+multiplication=number1*number2;
+division=number1/number2;
+modulo=number1%number2;
+printf("Addition of number1 and number2 : %d\n",addition);
+printf("Subtraction of number1 and number2 : %d\n",subtraction);
+printf("Multiplication of number1 and number2 : %d\n",multiplication);
+printf("Division of number1 and number2 : %f\n",division);
+printf("Modulo of number1 and number2 : %f\n",modulo);
+}
