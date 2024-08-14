@@ -1,0 +1,102 @@
+#include<stdio.h>
+main()
+
+{
+	int pin,choice,amt1,amt2;
+	int Balance=5000;
+	printf("  \n");
+	printf("         Welcome to SWISS BANK  \n");
+	printf("  \n");
+	printf(" Enter your 4-digit security pin : \n");
+	scanf("%d",&pin);
+	
+	if ((pin<=9999) && (pin>=1000))
+	{
+		printf("  \n");
+		printf(" Your options are : \n");
+		printf("  \n");
+		printf(" 1. Deposit \n");
+		printf(" 2. Withdraw \n");
+		printf(" 3. Check Balance \n");
+		printf(" 4. Exit \n");
+		printf("  \n");
+		printf(" Enter your choice : \n");
+		scanf("%d",&choice);
+		
+		if (choice==1)
+		{
+			printf("  \n");
+			printf(" Enter amount : \n");
+			scanf("%d",&amt1);
+			
+			if (amt1>0)
+			{
+				Balance=Balance+amt1;
+				printf("  \n");
+				printf(" Total balance = Rs. %d/- \n",Balance);
+                printf("  \n");
+                printf("         ...Thankyou for choosing our Bank... \n");
+			}
+			else
+			{
+				printf("  \n");
+				printf(" Transaction rejected because deposit amount is less than 0. \n");
+				printf("  \n");
+                printf("         ...Thankyou for choosing our Bank... \n");
+			}
+		}
+		
+		else if (choice==2)
+			{
+			printf("  \n");
+			printf(" Enter amount : \n");
+			scanf("%d",&amt2);
+			
+			if (amt2<=Balance)
+			{
+				Balance=Balance-amt1;
+				printf("  \n");
+				printf(" Total balance = Rs. %d/- \n",Balance);
+				printf("  \n");
+                printf("         ...Thankyou for choosing our Bank... \n");
+			}
+			else
+			{
+				printf("  \n");
+				printf(" Insufficient Funds. \n");
+				printf(" Transaction rejected. \n");
+				printf("  \n");
+				printf("         ...Thankyou for choosing our Bank... \n");
+			}
+		}
+		
+		else if (choice==3)
+		{
+		printf("  \n");
+		printf(" Total balance = Rs. %d/- \n",Balance);	
+		printf("  \n");
+		printf("         ...Thankyou for choosing our Bank... \n");
+		}
+		
+		else if (choice==4)
+		{
+		printf("  \n");
+		printf("         ...Thankyou for choosing our Bank... \n");
+		}
+		
+		else
+		{
+		printf("  \n");
+		printf(" Incorrect Choice. \n");
+		printf("  \n");
+		printf("         ...Thankyou for choosing our Bank... \n");
+		}
+    }
+	else
+	{
+		printf("  \n");
+		printf(" Entered pin is incorrect. \n");
+		printf("  \n");
+		printf("         ...Thankyou for choosing our Bank... \n");
+	}
+}
