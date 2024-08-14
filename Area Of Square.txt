@@ -1,0 +1,9 @@
+#include<stdio.h>
+main()
+{
+float a,s;
+printf("Enter the side lenght : ");
+scanf("%f",&s);
+a=s*s;
+printf("Area is %f",a);
+}
