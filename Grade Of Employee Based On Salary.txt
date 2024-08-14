@@ -1,0 +1,21 @@
+#include<stdio.h>
+main()
+{
+float bs,ta,da,hra,gs;
+printf("Enter the basic salary : ");
+scanf("%f",&bs);
+ta=0.05*bs;
+da=0.075*bs;
+hra=0.1*bs;
+gs=bs+ta+da+hra;
+if (gs>=100000)
+printf("A grade employee. His salary is %f",gs);
+else if (gs>=75000)
+printf("B grade employee. His salary is %f",gs);
+else if (gs>=50000)
+printf("C grade employee. His salary is %f",gs);
+else if (gs>=25000)
+printf("D grade employee. His salary is %f",gs);
+else
+printf("E grade employee. His salary is %f",gs);
+}
