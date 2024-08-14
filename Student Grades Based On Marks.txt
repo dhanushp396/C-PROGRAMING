@@ -1,0 +1,37 @@
+#include<stdio.h>
+main()
+//Student grades Based on Marks//
+{
+	int a;
+	printf("Enter marks of the student : ");
+	scanf("%d",&a);
+	if (a>=90)
+	{  
+	    printf("  \n");
+		printf("Result = Pass. \n");
+		printf("Grade = A.");
+	}
+	else if (a>=70)
+	{
+		printf("  \n");
+		printf("Result = Pass. \n");
+		printf("Grade = B.");
+	}
+	else if (a>=50)
+	{
+		printf("  \n");
+		printf("Result = Pass. \n");
+		printf("Grade = C.");
+	}
+	else if (a>=35)
+	{
+		printf("  \n");
+		printf("Result = Pass. \n");
+		printf("Grade = D.");
+	}
+	else
+	{
+		printf("  \n");
+		printf("Result = Fail. \n");
+	}
+}
