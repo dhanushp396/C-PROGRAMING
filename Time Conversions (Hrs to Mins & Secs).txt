@@ -1,0 +1,14 @@
+#include<stdio.h>
+main()
+{
+	int a,b,c,d;
+	
+	printf("Enter time in Hours and Minutes : ");
+	scanf("%d %d",&a,&b);
+	
+	c=(a*60)+b;
+	d=c*60;
+	
+	printf("The total time in Minutes = %d \n",c);
+	printf("The total time in Seconds = %d \n",d);
+}
