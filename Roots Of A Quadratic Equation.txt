@@ -19,10 +19,10 @@ main()
 	if (b*b>4*a*c)
 	{
 	printf("Roots are %d and %d.",x1,x2);
-    }
+        }
 	else if (b*b==4*a*c)
 	{
-    printf("Roots are equal. And is %d.",x3);
+        printf("Roots are equal. And is %d.",x3);
 	}
 	else
 	{
