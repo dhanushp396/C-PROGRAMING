@@ -9,15 +9,15 @@ main()
 	if ((ch>='A') && (ch<='Z'))
 	{
 	printf("%c is an alphabet.",ch);
-    }
+        }
     
 	else if ((ch>='a') && (ch<='z'))
 	{
 	printf("%c is an alphabet.",ch);
-    }
+        }
     
-    else
-    {
+        else
+        {
 	printf("%c is not an alphabet.",ch);
-    }
+        }
 }
