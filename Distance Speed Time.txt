@@ -1,0 +1,59 @@
+#include<stdio.h>
+main()
+{
+	int a,b,c,d;
+	
+	printf("What do you want to find? \n");
+	printf("   \n");
+	printf("1. Distance \n");
+	printf("2. Speed \n");
+	printf("3. Time \n");
+	printf("   \n");
+	printf("Select your Choice : \n");
+	scanf("%d",&a);
+	
+	if (a==1)
+	{
+		printf("Enter Speed (m/s) : \n");
+		scanf("%d",&b);
+		printf("Enter Time (s) : \n");
+		scanf("%d",&c);
+		
+		d=b*c;
+		
+		printf("   \n");
+		printf("The Distance (m) is %d.",d);
+	}
+	
+	else if (a==2)
+	{
+		printf("Enter Distance (m) : \n");
+		scanf("%d",&b);
+		printf("Enter Time (s) : \n");
+		scanf("%d",&c);
+		
+		d=b/c;
+		
+		printf("   \n");
+		printf("The Speed (m/s) is %d.",d);
+	}
+	
+	else if (a==3)
+	{
+		printf("Enter Distance (m) : \n");
+		scanf("%d",&b);
+		printf("Enter Speed (m/s) : \n");
+		scanf("%d",&c);
+		
+		d=b/c;
+		
+		printf("   \n");
+		printf("The Time (s) is %d.",d);
+	}
+	
+	else
+	{
+		printf("   \n");
+		printf("...ERROR...");
+	}
+}
