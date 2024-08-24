@@ -1,0 +1,9 @@
+#include<stdio.h>
+main()
+{
+	printf("Size Of Int = %d \n",sizeof(int));
+	printf("Size Of Float = %d \n",sizeof(float));
+	printf("Size Of Char = %d \n",sizeof(char));
+	printf("Size Of Double = %d \n",sizeof(double));	
+
+}
