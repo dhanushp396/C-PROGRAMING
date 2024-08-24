@@ -1,0 +1,12 @@
+#include<stdio.h>
+main()
+{
+	int a,c;
+	
+	printf("Enter the value of A : ");
+	scanf("%d",&a);
+	
+	c=~a;
+
+	printf("%d",c);
+}
