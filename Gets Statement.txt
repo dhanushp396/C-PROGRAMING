@@ -1,0 +1,11 @@
+#include<stdio.h>
+main()
+{
+	char ch[10];
+	
+	printf("Enter a String : ");
+	
+	gets(ch);
+	
+	printf("\nThe Entered String is %s.",ch);
+}
