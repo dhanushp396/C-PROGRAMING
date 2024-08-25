@@ -1,0 +1,11 @@
+#include<stdio.h>
+main()
+{
+	char ch;
+	
+	printf("Enter a character : ");
+	
+	ch = getch();
+	
+	printf("\nThe Entered character is %c.",ch);
+}
