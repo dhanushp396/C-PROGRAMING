@@ -1,0 +1,11 @@
+#include<stdio.h>
+main()
+{
+	char ch;
+	
+	printf("Enter a character : ");
+	scanf("%c",&ch);
+	
+	printf("The Entered Character is ");
+	putch(ch);
+}
