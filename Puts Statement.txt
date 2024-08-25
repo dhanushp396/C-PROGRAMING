@@ -1,0 +1,11 @@
+#include<stdio.h>
+main()
+{
+	char ch[10];
+	
+	printf("Enter a String : ");
+	scanf("%s",&ch);
+	
+	printf("The Entered String is ");
+	puts(ch);
+}
