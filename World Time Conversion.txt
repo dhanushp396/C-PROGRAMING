@@ -1,0 +1,264 @@
+#include<stdio.h>
+main()
+{
+	int a,b,c,d,e,f,g;
+	
+	printf("Enter time in Delhi (IST) in Hours & Minutes : \n");
+	printf("Hours : ");
+	scanf("%d",&a);
+	printf("Minutes : ");
+	scanf("%d",&b);
+	
+	if ((a>=0) && (a<=24) && (b>=0) && (b<=60))
+	{
+
+	printf("\n   \n");
+	printf("Convert time from Delhi (IST) to which of the following : \n");
+	printf("1. South Africa (SAST)  \n");
+	printf("2. London, UK (GMT+1)  \n");
+	printf("3. Washington, USA (GMT-4)  \n");
+	printf("4. Sydney, Australia (GMT+10)  \n");
+	printf("5. Singapore (GMT+8)  \n");
+	printf("6. Hong Kong, China (GMT+8)  \n");
+	printf("7. Tokyo, Japan (GMT+9)  \n");
+	printf("8. Moscow, Russia (GMT+3)  \n");
+	printf("9. New York, USA (GMT-4)  \n");
+	printf("10. Germany (MEZ) \n");
+	
+	printf("\n   \n");
+	printf("Select your Choice : ");
+	scanf("%d",&c);
+	
+	if (c==1)
+	{
+		
+	d=((a*60)+b)-210;
+	
+	if (d<0)
+	{
+		g=1440+d;
+		e=g/60;
+	    f=g%60;
+	}
+	else
+	{
+	    e=d/60;
+	    f=d%60;
+    }
+    
+    printf("\n   \n");
+    printf("The Time in South Africa (SAST) is %d Hours & %d Minutes.  \n",e,f);
+    printf("South Africa is behind Delhi by 3 Hours & 30 Minutes.");
+	}	
+	
+	else if (c==2)
+	{
+		
+	d=((a*60)+b)-270;
+	
+	if (d<0)
+	{
+		g=1440+d;
+		e=g/60;
+	    f=g%60;
+	}
+	else
+	{
+	    e=d/60;
+	    f=d%60;
+    }
+    
+    printf("\n   \n");
+    printf("The Time in London, UK (GMT+1) is %d Hours & %d Minutes.  \n",e,f);
+    printf("London is behind Delhi by 4 Hours & 30 Minutes.");
+	}	
+	
+	else if (c==3)
+	{
+		
+	d=((a*60)+b)-570;
+	
+	if (d<0)
+	{
+		g=1440+d;
+		e=g/60;
+	    f=g%60;
+	}
+	else
+	{
+	    e=d/60;
+	    f=d%60;
+    }
+    
+    printf("\n   \n");
+    printf("The Time in Washington, USA (GMT-4) is %d Hours & %d Minutes.  \n",e,f);
+    printf("Washington is behind Delhi by 9 Hours & 30 Minutes.");
+	}	
+	
+	else if (c==4)
+	{
+		
+	d=((a*60)+b)+270;
+	
+	if (d>1440)
+	{
+		g=d-1440;
+		e=g/60;
+	    f=g%60;
+	}
+	else
+	{
+	    e=d/60;
+	    f=d%60;
+    }
+    
+    printf("\n   \n");
+    printf("The Time in Sydney, Australia (GMT+10) is %d Hours & %d Minutes.  \n",e,f);
+    printf("Sydney is ahead of Delhi by 4 Hours & 30 Minutes.");
+	}
+	
+	else if (c==5)
+	{
+		
+	d=((a*60)+b)+150;
+	
+	if (d>1440)
+	{
+		g=d-1440;
+		e=g/60;
+	    f=g%60;
+	}
+	else
+	{
+	    e=d/60;
+	    f=d%60;
+    }
+    
+    printf("\n   \n");
+    printf("The Time in Singapore (GMT+8) is %d Hours & %d Minutes.  \n",e,f);
+    printf("Singapore is ahead of Delhi by 2 Hours & 30 Minutes.");
+	}
+	
+	else if (c==6)
+	{
+		
+	d=((a*60)+b)+150;
+	
+	if (d>1440)
+	{
+		g=d-1440;
+		e=g/60;
+	    f=g%60;
+	}
+	else
+	{
+	    e=d/60;
+	    f=d%60;
+    }
+    
+    printf("\n   \n");
+    printf("The Time in Hong Kong, China (GMT+8) is %d Hours & %d Minutes.  \n",e,f);
+    printf("Hong Kong is ahead of Delhi by 2 Hours & 30 Minutes.");
+	}
+	
+	else if (c==7)
+	{
+		
+	d=((a*60)+b)+210;
+	
+	if (d>1440)
+	{
+		g=d-1440;
+		e=g/60;
+	    f=g%60;
+	}
+	else
+	{
+	    e=d/60;
+	    f=d%60;
+    }
+    
+    printf("\n   \n");
+    printf("The Time in Tokyo, Japan (GMT+9) is %d Hours & %d Minutes.  \n",e,f);
+    printf("Tokyo is ahead of Delhi by 3 Hours & 30 Minutes.");
+	}
+	
+	else if (c==8)
+	{
+		
+	d=((a*60)+b)-150;
+	
+	if (d<0)
+	{
+		g=1440+d;
+		e=g/60;
+	    f=g%60;
+	}
+	else
+	{
+	    e=d/60;
+	    f=d%60;
+    }
+    
+    printf("\n   \n");
+    printf("The Time in Moscow, Russia (GMT+3) is %d Hours & %d Minutes.  \n",e,f);
+    printf("Moscow is behind Delhi by 2 Hours & 30 Minutes.");
+	}	
+	
+	else if (c==9)
+	{
+		
+	d=((a*60)+b)-570;
+	
+	if (d<0)
+	{
+		g=1440+d;
+		e=g/60;
+	    f=g%60;
+	}
+	else
+	{
+	    e=d/60;
+	    f=d%60;
+    }
+    
+    printf("\n   \n");
+    printf("The Time in New York, USA (GMT-4) is %d Hours & %d Minutes.  \n",e,f);
+    printf("New York is behind Delhi by 9 Hours & 30 Minutes.");
+	}
+	
+	else if (c==10)
+	{
+		
+	d=((a*60)+b)-210;
+	
+	if (d<0)
+	{
+		g=1440+d;
+		e=g/60;
+	    f=g%60;
+	}
+	else
+	{
+	    e=d/60;
+	    f=d%60;
+    }
+    
+    printf("\n   \n");
+    printf("The Time in Germany is %d Hours & %d Minutes.  \n",e,f);
+    printf("Germany (MEZ) is behind Delhi by 3 Hours & 30 Minutes.");
+	}
+	
+	else
+	{
+		printf("\n   \n");
+		printf("...The Entered Choice Is Incorrect...");
+	}	
+}
+
+else
+{
+	printf("\n   \n");
+	printf("...The Entered Time Is Incorrect...");	
+}
+}
