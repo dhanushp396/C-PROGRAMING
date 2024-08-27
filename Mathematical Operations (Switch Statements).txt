@@ -1,0 +1,39 @@
+#include<stdio.h>
+main()
+{
+	int a,b,c,symbol;
+	
+	printf("Enter The Mathematical operator : ");
+	scanf("%c",&symbol);
+	
+	printf("Enter The Value Of A : ");
+	scanf("%d",&a);
+	printf("Enter The Value Of B : ");
+	scanf("%d",&b);
+	
+	switch(symbol)
+	{
+	case '+' : c=a+b;
+	printf("Sum = %d",c);
+	break;
+	
+	case '-' : c=a-b;
+	printf("Difference = %d",c);
+	break;
+	
+	case '*' : c=a*b;
+	printf("Product = %d",c);
+	break;
+	
+	case '/' : c=a/b;
+	printf("Division = %d",c);
+	break;
+	
+	case '%' : c=a%b;
+	printf("Modulo = %d",c);
+	break;
+	
+	default : printf("...The Entered Mathematical Operator Is Incorrect...");
+	break;
+}
+}
