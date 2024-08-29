@@ -1,0 +1,13 @@
+#include<stdio.h>
+char alphabet();
+main()
+{
+	char ch;
+	printf("Enter a character : ");
+	scanf("%c",&ch);
+	alphabet(ch);
+}
+char alphabet(ch)
+{
+	((ch>='a') && (ch<='z'))? (printf("%c is a Lowercase Alphabet.",ch)) : (((ch>='A') && (ch<='Z'))? (printf("%c is an Uppercase Alphabet.",ch)) : (printf("%c is not an Alphabet.",ch)));
+}
