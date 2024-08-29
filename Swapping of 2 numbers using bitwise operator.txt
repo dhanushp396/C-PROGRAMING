@@ -1,0 +1,21 @@
+#include<stdio.h>
+void swappingnumbers();
+main()
+{
+	int a,b;
+	
+	printf("Enter A Number : ");
+	scanf("%d",&a);
+	printf("Enter B Number : ");
+	scanf("%d",&b);
+	swappingnumbers(a,b);
+}
+void swappingnumbers(a,b)
+{	
+	a=a^b;
+	b=a^b;
+	a=a^b;
+	
+	printf("A = %d  \n",a);
+	printf("B = %d",b);
+}
