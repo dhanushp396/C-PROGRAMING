@@ -1,0 +1,17 @@
+#include<stdio.h>
+void main()
+{
+	int a,c=0;
+	float b;
+	
+	printf("Enter a Number : ");
+	scanf("%d",&a);
+	
+	while(a!=0)
+	{
+	b=a%10;
+	c=c*10+b;
+	a=a/10;
+    }
+    printf("%d",c);
+}
