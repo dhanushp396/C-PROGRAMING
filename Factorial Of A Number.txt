@@ -2,7 +2,7 @@
 void factorial();
 main()
 {
-	int a,i=1,c;
+	int a,i=1,c=1;
 	
 	printf("Enter a Number : ");
 	scanf("%d",&a);
