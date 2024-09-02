@@ -28,7 +28,7 @@ main()
 		
 		if (choice==1)
 		{
-		        printf("  \n");
+		    printf("  \n");
 			printf(" Enter amount : ");
 			scanf("%d",&amt1);
 			
@@ -45,15 +45,15 @@ main()
 			{
 				printf("  \n");
 				printf(" Transaction rejected because deposit amount is less than 0. \n");
-                                break;
+                break;
 			}
 		}
 		
 		else if (choice==2)
 		{
-		    	printf("  \n");
-		    	printf(" Enter amount : ");
-		    	scanf("%d",&amt2);
+		    printf("  \n");
+		    printf(" Enter amount : ");
+		    scanf("%d",&amt2);
 			
 			if (amt2<=Balance)
 			{
@@ -75,23 +75,23 @@ main()
 		
 		else if (choice==3)
 		{
-	    	        printf("  \n");
-	    	        printf("---------------------------------------\n");
-	    	        printf(" Total balance = Rs. %d/- \n",Balance);
-	    	        printf("---------------------------------------\n");
+	    	printf("  \n");
+	    	printf("---------------------------------------\n");
+	    	printf(" Total balance = Rs. %d/- \n",Balance);
+	    	printf("---------------------------------------\n");
 		}
 		
 		else if (choice==4)
 		{
-	    	        break;
+	    	break;
 		}
 		
 		else
 		{
-	    	        printf("  \n");
-	    	        printf(" The entered Choice is Incorrect. \n");
-	    	        printf(" Transaction Stopped. \n");
-	    	        break;
+	    	printf("  \n");
+	    	printf(" The entered Choice is Incorrect. \n");
+	    	printf(" Transaction Stopped. \n");
+	    	break;
 		}
 		
 		printf("  \n");
@@ -108,7 +108,7 @@ main()
 			printf("---------------------------------------\n");
 		}
 		
-	        }
+	    }
 	    
 	    if (a==2)
 	    {
@@ -123,7 +123,7 @@ main()
 	    	printf(" The entered option is Incorrect. \n");
 	    	printf(" Transaction Stopped. \n");
 	    	printf("  \n");
-		printf("         ...Thank You for choosing our Bank... \n");
+	    	printf("         ...Thank You for choosing our Bank... \n");
 	    }
 		
 	    else if (b==2)
