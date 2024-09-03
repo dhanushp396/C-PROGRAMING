@@ -1,0 +1,18 @@
+#include<stdio.h>
+main()
+{
+	int a,b,i;
+	
+	printf("Enter the starting year : ");
+	scanf("%d",&a);
+	printf("Enter the ending year : ");
+	scanf("%d",&b);
+	
+	for (i=a;i<=b;i++)
+	{
+	if ((i%400==0) || ((i%100!=0) && (i%4==0)))
+	{
+		printf("%d \n",i);
+	}
+}
+}
