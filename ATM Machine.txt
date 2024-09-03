@@ -32,7 +32,7 @@ main()
 			printf(" Enter amount : ");
 			scanf("%d",&amt1);
 			
-			if (amt1>0)
+			if (amt1>=0)
 			{
 				Balance=Balance+amt1;
 				printf("  \n");
