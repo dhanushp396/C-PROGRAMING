@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<string.h>
+main()
+{
+	int len1,len2,i;
+	char a[30];
+	char b[20];
+	
+	gets(a);
+	gets(b);
+	
+	//METHOD - 1 : (with strcat function)
+	/*strcat(a,b);*/
+	
+	
+	//METHOD - 2 : (without strcat function)
+	/*len1=strlen(a);
+	len2=strlen(b);
+	
+	for (i=0;i<=len2;i++)
+	{
+		a[len1+i]=b[i];
+	}*/
+	
+	printf("%s",a);
+}
