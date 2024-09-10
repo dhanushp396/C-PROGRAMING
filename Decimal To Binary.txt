@@ -1,0 +1,23 @@
+#include<stdio.h>
+main()
+{
+	int d=9; //Enter the size of array in odd numbers only...
+	int a,b,i=0,j,c[d];
+	
+	printf("Enter a Number : ");
+	scanf("%d",&a);
+	
+	while(i<d)
+	{
+		b=a%2;
+		a=a/2;
+		
+		c[i]=b;
+		i++;
+	}
+	
+	for (j=d;j>=0;j--)
+	{
+		printf("%d",c[j]);
+	}
+}
