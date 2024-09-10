@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<string.h>
+main()
+{
+	char ch,a[30];
+	int l,i;
+	
+	gets(a);
+	
+	//METHOD - 1 : (with strrev function)
+	/*strrev(a);*/
+	
+	
+	//METHOD - 2 : (without strrev function)
+	/*l=strlen(a);
+	
+	for (i=0;i<l/2;i++)
+	{
+	    ch=a[i];
+	    
+		a[i]=a[l-1-i];
+		
+		a[l-1-i]=ch;
+	}*/
+	
+	printf("%s",a);
+}
