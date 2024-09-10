@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<string.h>
+main()
+{
+	int i,c=0;
+	char a[30],b[30];
+	
+	gets(a);
+	gets(b);
+	
+	//METHOD - 1 : (with strcmp function)
+	/*c=strcmp(a,b);
+	
+	printf("\n%d\n",c);*/
+	
+	
+	//METHOD - 2 : (without strcmp function)
+	/*for (i=0;a[i]!='\0' || b[i]!='\0';i++)
+	{
+		if (a[i]!=b[i])
+		{
+			c=1;
+			break;
+		}
+	}*/
+	
+	if (c==0)
+	{
+		printf("Same");
+	}
+	
+	else
+	{
+		printf("Different");
+	}
+}
