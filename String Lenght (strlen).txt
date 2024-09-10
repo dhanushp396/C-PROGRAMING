@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<string.h>
+main()
+{
+	int len;
+	char a[30];
+	
+	gets(a);
+	
+	len=strlen(a);
+	
+	printf("The lenght of the entered String is = %d",len);
+}
