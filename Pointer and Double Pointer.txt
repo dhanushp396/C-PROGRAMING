@@ -1,0 +1,20 @@
+#include<stdio.h>
+main()
+{
+	int a,*p,**q;
+	
+	a=100;
+	p=&a;
+	q=&p;
+	
+	printf("Value of A = %d \n",*p);
+	printf("Address A = %d \n",p);
+	printf("Value of P = %d \n",*q);
+	printf("Address P = %d \n",q);
+	printf("\n");
+	
+	//Double Pointer
+	
+	printf("Value of A = %d \n",**q);
+}
+//Similarly (***p) is triple pointer
