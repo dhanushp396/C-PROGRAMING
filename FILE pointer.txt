@@ -1,26 +1,39 @@
 #include<stdio.h>
 main()
 {
-	int num1,num2,sum;
-	FILE *a,*b,*c;
+	int num1,num2,sum,x=10,y=20;
+	FILE *a,*b,*c,*d,*e;
 	
-	a = fopen("file1.txt","w");
+/*	a = fopen("file1.txt","w");
 	
-	fprintf(a,"...Hello World...");
+	fprintf(a,"...Hello World...\n");
 	
 	fclose(a);
 	
-	b = fopen("file2.txt","r");
+	b = fopen("file1.txt","a");
 	
-	fscanf(b,"%d %d",&num1,&num2);
+	fprintf(b," \n");
+	fprintf(b,"...Hello World... \n");
 	
-	sum = num1+num2;
+	fclose(b);   */
 	
-	fclose(b);
+/*	c = fopen("file2.txt","w");
 	
-	c = fopen("file3.txt","w");
+	fprintf(c,"%d %d",x,y);
 	
-	fprintf(c,"The sum of %d and %d is %d.",num1,num2,sum);
+	fclose(c);   */
 	
-	fclose(c);
+/*	d = fopen("file2.txt","r");
+	
+	fscanf(d,"%d %d",&num1,&num2);
+
+	sum = num1 + num2;
+	
+	fclose(d);
+	
+	e = fopen("file3.txt","w");
+	
+	fprintf(e,"The sum of %d and %d is %d.",num1,num2,sum);
+	
+	fclose(e);   */
 }
