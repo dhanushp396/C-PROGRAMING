@@ -1,0 +1,79 @@
+//NOTE : This code is only applicable for dates from 01/01/0001 A.D to any date in future.
+
+#include<stdio.h>
+int main()
+{
+	int a,b,c,days=0,i,y=0,ly=0,m30=0,m31=0,f=0,lf=0,h;
+	char *week[10]={"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+	
+	printf("Enter the Date [DD/MM/YYYY] : ");
+	scanf("%d %d %d",&c,&b,&a);
+	
+	if ((b>12 || b<1) || ((b==1 || b==3 || b==5 || b==7 || b==8 || b==10 || b==12) && (c<1 || c>31)))
+	{
+		printf("\nThe entered Date does not Exist.\n");
+	}
+	
+	else if ((b==4 || b==6 || b==9 || b==11) && (c<1 || c>30))
+	{
+		printf("\nThe entered Date does not Exist.\n");
+	}
+	
+	else if ((b==2) && (a%400==0 || (a%100!=0 && a%4==0)) && (c<1 || c>29))
+	{
+		printf("\nThe entered Date does not Exist.\n");
+	}
+	
+	else if ((b==2) && !(a%400==0 || (a%100!=0 && a%4==0)) && (c<1 || c>28))
+	{
+		printf("\nThe entered Date does not Exist.\n");
+	}
+	
+	else
+	{
+		for (i=1;i<a;i++)
+	    {
+	    	if (i%400==0 || (i%100!=0 && i%4==0))
+	    	{
+	    		ly++;
+	    	}
+	    	else
+	    	{
+	    		y++;
+	    	}
+    	}
+	
+	    days=(ly*366)+(y*365);
+	
+	    for (i=1;i<b;i++)
+	    {
+	    	if (i==1 || i==3 || i==5 || i==7 || i==8 || i==10 || i==12)
+	    	{
+	    		m31++;
+	    	}
+	    	else if (i!=2)
+	    	{
+	    		m30++;
+	    	}
+	    	else
+	    	{
+	    		if (a%400==0 || (a%100!=0 && a%4==0))
+	    		{
+	    			lf++;
+		    	}
+			    else
+    			{
+	    			f++;
+		    	}
+		    }
+    	}
+	
+    	days=days+(m31*31)+(m30*30)+(f*28)+(lf*29)+c;
+	 
+	    h=days%7;
+	
+	    printf("\n%s\n",week[h]);
+  	}
+	
+	return 0;
+}
