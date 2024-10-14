@@ -1,0 +1,54 @@
+#include<stdio.h>
+int main()
+{
+	int a[50],b[50],n,i,j,c,d,h,sum1=0,sum2=0,temp,count=0;
+	
+	printf("Enter the value of N : ");
+	scanf("%d",&n);
+	
+	for (i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	
+	for (i=0;i<n;i++)
+	{
+		for (j=i+1;j<n;j++)
+		{
+			c=a[i];
+			h=a[i];
+			d=a[j];
+			
+			while(c!=0)
+			{
+				temp=c%10;
+				sum1=(sum1*10)+temp;
+				c=c/10;
+			}
+			
+			sum1=sum1+d;
+			
+			while(d!=0)
+			{
+				temp=d%10;
+				sum2=(sum2*10)+temp;
+				d=d/10;
+			}
+			
+			sum2=sum2+h;
+			
+			if (sum1==sum2)
+			{
+				count++;
+			}
+			
+			sum1=0;
+			sum2=0;
+		}
+	}
+	
+	printf("\n");
+	printf("The number of Nice Pairs are %d.",count);
+	
+	return 0;
+}
