@@ -3,13 +3,13 @@ int main()
 {
 	int a,b,c,symbol;
 	
-	printf("Enter The Mathematical operator : ");
-	scanf("%c",&symbol);
-	
 	printf("Enter The Value Of A : ");
 	scanf("%d",&a);
 	printf("Enter The Value Of B : ");
 	scanf("%d",&b);
+
+        printf("Enter The Mathematical operator : ");
+	scanf("%c",&symbol);
 	
 	switch(symbol)
 	{
