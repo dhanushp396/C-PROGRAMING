@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char a[100];
+	
+	printf("Enter a string : ");
+	
+	scanf("%s",a);
+	
+	strupr(a);
+	
+	printf("The string in UpperCase is : ");
+	printf("%s",a);
+	
+	strlwr(a);
+	
+	printf("The string in LowerCase is : ");
+	printf("%s",a);
+	
+	return 0;
+}
