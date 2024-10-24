@@ -2,21 +2,63 @@
 #include<string.h>
 int main()
 {
-	char a[100];
+	int i=0;
+	char a[50];
 	
-	printf("Enter a string : ");
+	printf("Enter a String : ");
+	gets(a);
 	
-	scanf("%s",a);
 	
-	strupr(a);
+	//Method : 1 (with using strlwr or strupr function)
 	
-	printf("The string in UpperCase is : ");
+	//Converting to Lower Case
+	
+	/*strlwr(a);*/
+	
+	//Converting to Upper Case
+	
+	/*strupr(a);*/
+	
+	
+	//Method : 2 (without using strlwr or strupr function)
+	//Values : A=65,B=66,....    a=97,b=98,....
+	
+	//Converting to Lower Case 
+	   
+	/*while(a[i]!='\0')
+	{
+		if (a[i]>='A' && a[i]<='Z')
+		{
+			a[i]=a[i]+32;
+		}
+		
+		else
+		{
+			a[i]=a[i];
+		}
+		
+		i++;
+	}*/
+	
+	//Converting to Upper Case
+	
+	/*while(a[i]!='\0')
+	{
+		if (a[i]>='a' && a[i]<='z')
+		{
+			a[i]=a[i]-32;
+		}
+		
+		else
+		{
+			a[i]=a[i];
+		}
+		
+		i++;
+	}*/
+	
+	printf("\n");
 	printf("%s",a);
-	
-	strlwr(a);
-	
-	printf("The string in LowerCase is : ");
-	printf("%s",a);
-	
-	return 0;
+
+return 0;
 }
