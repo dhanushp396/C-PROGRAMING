@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<string.h>
+struct book
+{
+	char name[100];
+	int edition;
+	int page;
+	char author[100];
+	float price;
+}b1,b2,b3,b4;
+
+int main()
+{
+	strcpy(b1.name,"C Language");
+    strcpy(b2.name,"C++ Language");
+    strcpy(b3.name,"Java Language");
+    strcpy(b4.name,"Python Language");
+
+    b1.edition=6;
+    b2.edition=12;
+    b3.edition=3;
+    b4.edition=5;
+
+    b1.page=450;
+    b2.page=270;
+    b3.page=700;
+    b4.page=940;
+
+    strcpy(b1.author,"Dennis Richie");
+    strcpy(b2.author,"Bjarne Stroustrup");
+    strcpy(b3.author,"James Gosling");
+    strcpy(b4.author,"Guido van Rossum");
+
+    b1.price=600;
+    b2.price=450.50;
+    b3.price=1299;
+    b4.price=550.35;
+
+    printf(" Details Of %s Book\n",b1.name);
+    printf("Edition = %d\n",b1.edition);
+    printf("Pages = %d\n",b1.page);
+    printf("Author = %s\n",b1.author);
+    printf("Price = %.2f\n",b1.price);
+    printf("\n");
+    printf(" Details Of %s Book\n",b2.name);
+    printf("Edition = %d\n",b2.edition);
+    printf("Pages = %d\n",b2.page);
+    printf("Author = %s\n",b2.author);
+    printf("Price = %.2f\n",b2.price);
+    printf("\n");
+    printf(" Details Of %s Book\n",b3.name);
+    printf("Edition = %d\n",b3.edition);
+    printf("Pages = %d\n",b3.page);
+    printf("Author = %s\n",b3.author);
+    printf("Price = %.2f\n",b3.price);
+    printf("\n");
+    printf(" Details Of %s Book\n",b4.name);
+    printf("Edition = %d\n",b4.edition);
+    printf("Pages = %d\n",b4.page);
+    printf("Author = %s\n",b4.author);
+    printf("Price = %.2f\n",b4.price);
+    printf("\n");
+    
+    return 0;
+}
