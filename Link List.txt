@@ -1,0 +1,207 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int choice,sum,a,loc,con=0;
+	
+	struct node
+	{
+		int data;
+		struct node * next;
+	};
+	
+	struct node *start, *newnode, *temp, *prev;
+	
+	start=0;
+	
+	while(1)
+	{
+		printf("--------------------------------------------------------\n");
+		printf("Your Options Are : \n");
+		printf("1. Enter Data into List\n");
+		printf("2. Insert Data into List\n");
+		printf("3. Delete Data from List\n");
+		printf("4. Display the List\n");
+		printf("5. Exit\n");
+		printf("Enter Choice : ");
+		scanf("%d",&choice);
+		printf("\n");
+		
+		if(choice==1)
+		{
+			newnode=(struct node *)malloc(sizeof(struct node));
+			
+			printf("Enter the Data : ");
+			scanf("%d",&newnode->data);
+			newnode->next=0;
+			con++;
+			if(start==0)
+			{
+				start=newnode;
+				temp=newnode;
+			}
+			else
+			{
+				temp->next=newnode;
+				temp=newnode;
+			}
+		}
+		else if(choice==2)
+		{
+			printf("------------------\n");
+			printf("Insert Data : \n");
+			printf("1. Beginning\n");
+			printf("2. End\n");
+			printf("3. Selected Location \n");
+			printf("Enter Your Choice : ");
+			scanf("%d",&a);
+			
+			if(a==1)
+			{
+				newnode=(struct node *)malloc(sizeof(struct node));
+				printf("Enter the Data : ");
+			    scanf("%d",&newnode->data);
+			    
+				newnode->next=start;
+				start=newnode;
+				con++;
+			}
+			else if(a==2)
+			{
+				newnode=(struct node *)malloc(sizeof(struct node));
+				printf("Enter the Data : ");
+			    scanf("%d",&newnode->data);
+			    
+			    temp=start;
+			    while(temp->next != 0)
+			    {
+			    	temp=temp->next;
+				}
+				temp->next=newnode;
+				newnode->next=0;
+				con++;
+			}
+			else if(a==3)
+			{
+				newnode=(struct node *)malloc(sizeof(struct node));
+				printf("Enter the location : ");
+				scanf("%d",&loc);
+				printf("Enter the Data : ");
+			    scanf("%d",&newnode->data);
+			    
+			    temp=start;
+			    loc=loc-1;
+			    while(loc--)
+			    {
+			    	temp=temp->next;
+				}
+				prev=start;
+				while(prev->next != temp)
+				{
+					prev=prev->next;
+				}
+				prev->next = newnode;
+				newnode->next = temp;
+				con++;
+			}
+			else
+			{
+				printf("Entered Choice is Incorrect...\n");
+			}
+		}
+		else if(choice==3)
+		{
+			if(con>0)
+			{
+				printf("------------------\n");
+				printf("Delete Data : \n");
+			    printf("1. Beginning\n");
+			    printf("2. End\n");
+			    printf("3. Selected Location \n");
+			    printf("Enter Your Choice : ");
+			    scanf("%d",&a);
+			
+			    if(a==1)
+			    {
+			    	con--;
+			    	temp=start;
+			    	start=temp->next;
+			    	free(temp);
+		    	}
+			    else if(a==2)
+			    {
+			    	con--;
+			    	temp=start;
+				    while(temp->next != 0)
+    				{
+	    				temp=temp->next;
+		    		}
+			    	prev=start;
+				    while(prev->next != temp)
+    				{
+	    				prev=prev->next;
+		    		}
+			    	prev->next=0;
+				    free(temp);
+	    		}
+    			else if(a==3)
+	    		{
+	    			con--;
+		    		printf("Enter the location : ");
+			    	scanf("%d",&loc);
+				    loc--;
+    				temp=start;
+	    			while(loc--)
+		    		{
+			    		temp=temp->next;
+				    }
+    				prev=start;
+	    			while(prev->next != temp)
+		    		{
+			    		prev=prev->next;
+				    }
+    				prev->next = temp->next;
+	    			free(temp);
+		    	}
+			    else
+    			{
+	    			printf("Entered Choice is Incorrect...\n");
+		    	}
+			}
+			else
+			{
+				printf("--------------------------------------------------------\n");
+				printf("The list is Empty... \n");
+			}
+		}
+		else if(choice==4)
+		{
+			if(con>0)
+			{
+				temp=start;
+			    printf("--------------------------------------------------------\n");
+			    printf("The Elements in the list are : ");
+			    while(temp!=0)
+			    {
+			    	printf("%d ",temp->data);
+			    	temp=temp->next;
+			    }
+			    printf("\n");
+			}
+			else
+			{
+				printf("--------------------------------------------------------\n");
+				printf("The list is Empty... \n");
+			}
+		}
+		else if(choice==5)
+		{
+			break;
+		}
+		else
+		{
+			printf("--------------------------------------------------------\n");
+			printf("Entered Choice is Incorrect...\n");
+		}
+	}
+}
