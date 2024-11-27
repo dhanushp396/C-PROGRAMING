@@ -1,0 +1,73 @@
+#include<stdio.h>
+int main()
+{
+	int a[50],l,r,n,d,m,i,c=1,p,t;
+	
+	printf("Enter the number of values : ");
+	scanf("%d",&n);
+	printf("Enter the values : \n");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	printf("Enter the Searching Value : ");
+	scanf("%d",&d);
+	
+	p=n-1;
+	while(c!=0)
+	{
+		c=0;
+		{
+			for(i=0;i<p;i++)
+			{
+				if(a[i]>a[i+1])
+				{
+					t=a[i];
+					a[i]=a[i+1];
+					a[i+1]=t;
+					c++;
+				}
+			}
+			p--;
+		}
+	}
+	
+	l=0;
+	r=n-1;
+	n=0;
+	while(1)
+	{
+		m=(l+r)/2;
+		
+		if(d==a[m])
+		{
+			printf("\n");
+			printf("The value is found.\n");
+			break;
+		}
+		else if(d>a[m])
+		{
+			l=m+1;
+		}
+		else
+		{
+			r=m-1;
+		}
+		
+		if(l==r)
+		{
+			if(d==a[l])
+		    {
+		    	printf("\n");
+			    printf("The value is found.\n");
+			    break;
+		    }
+		    else
+		    {
+		    	printf("\n");
+		    	printf("The value is not found.\n");
+		    	break;
+			}
+		}
+	}
+}
