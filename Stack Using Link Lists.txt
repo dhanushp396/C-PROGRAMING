@@ -38,12 +38,16 @@ int main()
 					if(start==0)
 					{
 						start=newnode;
-						temp=newnode;
 					}
 					else
 					{
+						temp=start;
+						while(temp->next != 0)
+						{
+							temp=temp->next;
+						}
+						
 						temp->next=newnode;
-						temp=newnode;
 					}
 					
 					con++;
