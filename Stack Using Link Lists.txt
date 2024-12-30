@@ -1,0 +1,129 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int choice,c=1,con=0;
+	
+	struct node
+	{
+		int data;
+		struct node *next;
+	};
+	struct node *temp, *start, *newnode, *prev;
+	start=0;
+	
+	while(c==1)
+	{
+		printf("-----------------------------------------------\n");
+		printf("Your options are :\n");
+		printf("1. Push\n");
+		printf("2. Pop\n");
+		printf("3. Display\n");
+		printf("4. Exit\n");
+		printf("\n");
+		printf("Enter your choice : ");
+		scanf("%d",&choice);
+		
+		switch(choice)
+		{
+			case 1 :
+				{
+					newnode=(struct node*)malloc(sizeof(struct node));
+					
+					printf("Enter the data : ");
+					scanf("%d",&newnode->data);
+					
+					newnode->next = 0;
+					
+					if(start==0)
+					{
+						start=newnode;
+						temp=newnode;
+					}
+					else
+					{
+						temp->next=newnode;
+						temp=newnode;
+					}
+					
+					con++;
+					
+					break;
+				}
+			case 2 :
+				{
+					if(con==0)
+					{
+						printf("-----------------------------------------------\n");
+						printf("Stack is Empty.\n");
+					}
+					else if(con==1)
+					{
+						temp=start;
+						free(temp);
+						
+						start=0;
+						
+						con--;
+						
+						printf("-----------------------------------------------\n");
+						printf("Element popped.\n");
+					}
+					else
+					{
+						temp=start;
+					    while(temp->next != 0)
+					    {
+					    	temp=temp->next;
+					    }
+					    prev=start;
+					    while(prev->next != temp)
+					    {
+					    	prev=prev->next;
+					    }
+					
+					    prev->next = 0;
+					    free(temp);
+					
+					    con--;
+					    
+					    printf("-----------------------------------------------\n");
+					    printf("Element popped.\n");
+					}
+					
+					break;
+				}
+			case 3 :
+				{
+					if(con==0)
+					{
+						printf("-----------------------------------------------\n");
+						printf("Stack is Empty.\n");
+					}
+					else
+					{
+						temp=start;
+						printf("-----------------------------------------------\n");
+						while(temp != 0)
+						{
+							printf("%d ",temp->data);
+							temp=temp->next;
+						}
+						printf("\n");
+					}
+					
+					break;
+				}
+			case 4 :
+				{
+					c=0;
+					break;
+				}
+			default :
+				{
+					printf("-----------------------------------------------\n");
+					printf("Entered choice is Incorrect.\n");
+				}
+		}
+	}
+}
