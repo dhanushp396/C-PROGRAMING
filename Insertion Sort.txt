@@ -1,0 +1,39 @@
+/*Each number is taken in a temp variable, then the elements greater than that number are moved towards right by one step each,
+and when the position of the temp is found it is inserted in that place..*/
+
+#include<stdio.h>
+int main()
+{
+	int n,i,j,temp;
+	
+	printf("Enter the value of N : ");
+	scanf("%d",&n);
+	
+	int a[n];
+	
+	printf("Enter the numbers of Array : ");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	
+	for(i=1;i<n;i++)
+	{
+		temp=a[i];
+		j=i-1;
+		
+		while(j>=0 && a[j]>temp)
+		{
+			a[j+1]=a[j];
+			j--;
+		}
+		
+		a[j+1]=temp;
+	}
+	
+	printf("The sorted Array : ");
+	for(i=0;i<n;i++)
+	{
+		printf("%d ",a[i]);
+	}
+}
