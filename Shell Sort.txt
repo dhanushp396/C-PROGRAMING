@@ -1,0 +1,41 @@
+/*First take a gap as half of array, then swap all greater numbers (complementary elements with respect to gap element) in left towards right.
+Then gap=gap/2, and again repeat the process of swapping untill gap becomes 1.*/
+
+#include <stdio.h>
+int main() 
+{
+    int n,i,j,gap,temp;
+    
+    printf("Enter the value of N : ");
+    scanf("%d",&n);
+    
+    int a[n];
+    
+    printf("Enter the Elements of Array : ");
+    for(i=0;i<n;i++)
+    {
+    	scanf("%d",&a[i]);
+	}
+	
+	for(gap=n/2;gap>=1;gap=gap/2)
+	{
+		for(i=gap;i<n;i++)
+		{
+			for(j=i-gap;j>=0;j=j-gap)
+			{
+				if(a[j]>a[j+gap])
+				{
+					temp=a[j];
+					a[j]=a[j+gap];
+					a[j+gap]=temp;
+				}
+			}
+		}
+	}
+	
+	printf("The Sorted Array : ");
+    for(i=0;i<n;i++)
+    {
+    	printf("%d ",a[i]);
+	}
+}
