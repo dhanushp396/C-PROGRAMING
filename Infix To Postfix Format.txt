@@ -1,0 +1,111 @@
+//In the input string use only numbers from 0 to 9, and the operators : "(,+,-,*,/,^,)"
+
+#include<stdio.h>
+#include<string.h>
+
+int numcheck(char n)
+{
+	if(n=='0'||n=='1'||n=='2'||n=='3'||n=='4'||n=='5'||n=='6'||n=='7'||n=='8'||n=='9')
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+int prec(char n)
+{
+	if(n=='+' || n=='-')
+	{
+		return 1;
+	}
+	else if(n=='*' || n=='/')
+	{
+		return 2;
+	}
+	else if(n=='^')
+	{
+		return 3;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+void solve(char a[])
+{
+	char b[100],c[100],i=0,j=0,k=0,n,m;
+	
+	while(a[i]!='\0')
+	{
+		if(numcheck(a[i]))
+	    {
+	    	b[j]=a[i];
+	    	j++;
+	    }
+	    else if(a[i]=='(')
+	    {
+		    c[k]=a[i];
+		    k++;
+	    }
+	    else if(a[i]==')')
+	    {
+	    	k--;
+		    while(c[k]!='(' && k>0)
+		    {
+		    	b[j]=c[k];
+		    	j++;
+		    	k--;
+			}
+	    }
+	    else
+	    {
+	    	n=prec(a[i]);
+	    	m=prec(c[k-1]);
+	    	
+	    	if(n>m)
+	    	{
+	    		c[k]=a[i];
+	    		k++;
+			}
+			else
+			{
+				b[j]=c[k-1];
+				j++;
+				k--;
+				c[k]=a[i];
+				k++;
+			}
+		}
+		
+		i++;
+	}
+	k--;
+	while(k>=0)
+	{
+		if(c[k]!='(')
+		{
+			b[j]=c[k];
+		    j++;
+		}
+		k--;
+	}
+	
+	n=j;
+	for(i=0;i<n;i++)
+	{
+		printf("%c",b[i]);
+	}
+}
+
+int main()
+{
+	char a[100];
+	
+	scanf("%s",a);
+	
+	solve(a);
+}
