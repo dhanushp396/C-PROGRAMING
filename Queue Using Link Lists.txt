@@ -2,15 +2,19 @@
 #include<stdlib.h>
 int main()
 {
-	int choice,c=1,con=0;
+	int choice,c=1,con=0,size;
 	
 	struct node
 	{
 		int data;
 		struct node *next;
 	};
+	
 	struct node *temp, *start, *newnode;
 	start=0;
+	
+	printf("Enter the size of the Queue : ");
+	scanf("%d",&size);
 	
 	while(c==1)
 	{
@@ -28,29 +32,37 @@ int main()
 		{
 			case 1 :
 				{
-					newnode=(struct node*)malloc(sizeof(struct node));
-					
-					printf("Enter the data : ");
-					scanf("%d",&newnode->data);
-					
-					newnode->next = 0;
-					
-					if(start==0)
+					if(con==size)
 					{
-						start=newnode;
+						printf("-----------------------------------------------\n");
+						printf("The Queue is Full.\n");
 					}
 					else
 					{
-						temp=start;
-						while(temp->next != 0)
-						{
-							temp=temp->next;
-						}
-						
-						temp->next=newnode;
-					}
+						newnode=(struct node*)malloc(sizeof(struct node));
 					
-					con++;
+						printf("Enter the data : ");
+						scanf("%d",&newnode->data);
+					
+						newnode->next = 0;
+					
+						if(start==0)
+						{
+							start=newnode;
+						}
+						else
+						{
+							temp=start;
+							while(temp->next != 0)
+							{
+								temp=temp->next;
+							}
+							
+							temp->next=newnode;
+						}
+					
+						con++;
+					}
 					
 					break;
 				}
