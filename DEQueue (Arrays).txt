@@ -1,0 +1,164 @@
+#include<stdio.h>
+int main()
+{
+	int choice,n,c=0,front=(-1),rear=(-1),i,d=0;
+	
+	printf("Enter the size of the Queue : ");
+	scanf("%d",&n);
+	
+	int a[n+1];
+	
+	while(c!=1)
+	{
+		printf("---------------------------------------------\n");
+		printf("Your operations are : \n");
+		printf("1. Add element at first\n");
+		printf("2. Add element at last\n");
+		printf("3. Delete element at first\n");
+		printf("4. Delete element at last\n");
+		printf("5. Display\n");
+		printf("6. Exit\n");
+		printf("Enter your choice : ");
+		scanf("%d",&choice);
+		
+		switch(choice)
+		{
+			case 1 :
+				{
+					if(rear==(-1) && front==(-1))
+					{
+						rear=0;
+						front=0;
+					}
+
+					if((rear+1)%n==front)
+					{
+						printf("---------------------------------------------\n");
+						printf("The Queue is full.\n");
+					}
+					else if(front==0 && rear==0 && d!=1)
+					{
+						printf("Enter the data : ");
+						scanf("%d",&a[front]);
+						d=1;
+					}
+					else
+					{
+						front=((front-1)+n)%n;
+						printf("Enter the data : ");
+						scanf("%d",&a[front]);
+					}
+					
+					break;
+				}
+			case 2 :
+				{
+					if(rear==(-1) && front==(-1))
+					{
+						rear=0;
+						front=0;
+					}
+
+					if((rear+1)%n==front)
+					{
+						printf("---------------------------------------------\n");
+						printf("The Queue is full.\n");
+					}
+					else if(front==0 && rear==0 && d!=1)
+					{
+						printf("Enter the data : ");
+						scanf("%d",&a[rear]);
+						d=1;
+					}
+					else
+					{
+						rear=(rear+1)%n;
+						printf("Enter the data : ");
+						scanf("%d",&a[rear]);
+					}
+					
+					break;
+				}
+			case 3 :
+				{
+					if(rear==(-1) && front==(-1))
+					{
+						printf("---------------------------------------------\n");
+						printf("The Queue is Empty.\n");
+					}
+					else if(front==rear)
+					{
+						printf("---------------------------------------------\n");
+						printf("Element Deleted.\n");
+						front=-1;
+						rear=-1;
+						d=0;
+					}
+					else
+					{
+						printf("---------------------------------------------\n");
+						printf("Element Deleted.\n");
+						front=(front+1)%n;
+					}
+					
+					break;
+				}
+			case 4 :
+				{
+					if(rear==(-1) && front==(-1))
+					{
+						printf("---------------------------------------------\n");
+						printf("The Queue is Empty.\n");
+					}
+					else if(front==rear)
+					{
+						printf("---------------------------------------------\n");
+						printf("Element Deleted.\n");
+						front=-1;
+						rear=-1;
+						d=0;
+					}
+					else
+					{
+						printf("---------------------------------------------\n");
+						printf("Element Deleted.\n");
+						rear=((rear-1)+n)%n;
+					}
+					
+					break;
+				}
+			case 5 :
+				{
+					if(rear==(-1) && front==(-1))
+					{
+						printf("---------------------------------------------\n");
+						printf("The Queue is Empty.\n");
+					}
+					else
+					{
+						i=front;
+						printf("---------------------------------------------\n");
+						printf("The Queue : ");
+						while(i!=rear)
+						{
+							printf("%d ",a[i]);
+							i=(i+1)%n;
+						}
+						printf("%d\n",a[rear]);
+					}
+					
+					break;
+				}
+			case 6 :
+				{
+					c=1;
+					break;
+				}
+			default : 
+			{
+				printf("---------------------------------------------\n");
+				printf("Entered Choice is Incorrect.\n");
+			}
+		}
+	}
+}
