@@ -1,13 +1,16 @@
 #include<stdio.h>
 int main()
 {
-	int a[100],i,front=(-1),rear=(-1),size,choice,c=0,d=0;
+	int i,front=(-1),rear=(-1),size,choice,c=0,d=0;
 	
 	printf("Enter the Size of Queue : ");
 	scanf("%d",&size);
 	
+	int a[size+1];
+	
 	while(c!=1)
 	{
+		printf("---------------------------------------------\n");
 		printf("Your Options are : \n");
 		printf("1. Enqueue\n");
 		printf("2. Dequeue\n");
@@ -28,6 +31,7 @@ int main()
 				
 				if((rear+1)%size==front)
 				{
+					printf("---------------------------------------------\n");
 					printf("The Queue is full.\n");
 				}
 				else if(rear==0 && front==0 && d!=1)
@@ -49,10 +53,12 @@ int main()
 			{
 				if(front==(-1) && rear==(-1))
 				{
+					printf("---------------------------------------------\n");
 					printf("The Queue is Empty.\n");
 				}
 				else if(front==rear)
 				{
+					printf("---------------------------------------------\n");
 					printf("Element Deleted.\n");
 					front=(-1);
 					rear=(-1);
@@ -60,6 +66,7 @@ int main()
 				}
 				else
 				{
+					printf("---------------------------------------------\n");
 					printf("Element Deleted.\n");
 					front=(front+1)%size;
 				}
@@ -70,11 +77,14 @@ int main()
 			{
 				if(front==(-1) && rear==(-1))
 				{
+					printf("---------------------------------------------\n");
 					printf("The Queue is Empty.\n");
 				}
 				else
 				{
 					i=front;
+					printf("---------------------------------------------\n");
+					printf("The Queue : ");
 					while(i!=rear)
 					{
 						printf("%d ",a[i]);
@@ -93,6 +103,7 @@ int main()
 			}
 			default :
 			{
+				printf("---------------------------------------------\n");
 				printf("Entered choice is Incorrect.\n");
 				break;
 			}
