@@ -1,0 +1,202 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int choice,c=0,con=0,n;
+	
+	printf("Enter the Size of the Queue : ");
+	scanf("%d",&n);
+	
+	struct node
+	{
+		struct node *before;
+		int data;
+		struct node *next;
+	};
+	
+	struct node *start, *temp, *newnode, *end, *prev;
+	
+	start=0;
+	
+	while(c!=1)
+	{
+		printf("-----------------------------------------------------\n");
+		printf("Your operations are : \n");
+		printf("1. Add Element at Front\n");
+		printf("2. Add Element at Last\n");
+		printf("3. Delete Element at Front\n");
+		printf("4. Delete Element at Last\n");
+		printf("5. Display\n");
+		printf("6. Exit\n\n");
+		printf("Enter your Choice : ");
+		scanf("%d",&choice);
+		
+		
+		switch(choice)
+		{
+			case 1 :
+				{
+					if(con==n)
+					{
+						printf("-----------------------------------------------------\n");
+						printf("The Queue is Full.\n");
+					}
+					else
+					{
+						newnode=(struct node*)malloc(sizeof(struct node));
+						printf("Enter the Data : ");
+						scanf("%d",&newnode->data);
+						con++;
+					
+						if(start==0)
+						{
+							start=newnode;
+							newnode->before=0;
+							newnode->next=0;
+							end=newnode;
+						}
+						else
+						{
+							temp=start;
+							start=newnode;
+							temp->before=newnode;
+							newnode->next=temp;
+						}
+					}
+					
+					break;
+				}
+			case 2 :
+				{
+					if(con==n)
+					{
+						printf("-----------------------------------------------------\n");
+						printf("The Queue is Full.\n");
+					}
+					else
+					{
+						newnode=(struct node*)malloc(sizeof(struct node));
+						printf("Enter the Data : ");
+						scanf("%d",&newnode->data);
+						con++;
+					
+						if(start==0)
+						{
+							start=newnode;
+							newnode->before=0;
+							newnode->next=0;
+						}
+						else
+						{
+							temp=end;
+							temp->next=newnode;
+							newnode->next=0;
+							newnode->before=temp;
+						}
+					
+						end=newnode;
+					}
+					
+					break;
+				}
+			case 3 :
+				{
+					if(con==0)
+					{
+						printf("-----------------------------------------------------\n");
+						printf("The Queue is Empty.\n");
+					}
+					else
+					{
+						temp=start;
+						con--;
+					
+						if(temp->next==0)
+						{
+					 		free(temp);
+					 		start=0;
+					 		end=0;
+						}
+						else
+						{
+					    	start=temp->next;
+					    	free(temp);
+					    	temp=start;
+					    	temp->before=0;
+						}
+					
+						printf("-----------------------------------------------------\n");
+						printf("Element Deleted.\n");
+					}
+					
+					break;
+				}
+			case 4 :
+				{
+					if(con==0)
+					{
+						printf("-----------------------------------------------------\n");
+						printf("The Queue is Empty.\n");
+					}
+					else
+					{
+						temp=start;
+						con--;
+					
+						if(temp->next==0)
+						{
+					 		free(temp);
+					 		start=0;
+					 		end=0;
+						}
+						else
+						{
+							temp=end;
+							prev=temp->before;
+							prev->next=0;
+							free(temp);
+							end=prev;
+						}	
+					
+						printf("-----------------------------------------------------\n");
+						printf("Element Deleted.\n");
+					}
+					
+					break;
+				}
+			case 5 :
+				{
+					if(con==0)
+					{
+						printf("-----------------------------------------------------\n");
+						printf("The Queue is Empty.\n");
+					}
+					else
+					{
+						temp=start;
+						printf("-----------------------------------------------------\n");
+						printf("The Queue : ");
+						while(temp!=0)
+						{
+							printf("%d ",temp->data);
+							temp=temp->next;
+						}
+						printf("\n");
+					}
+					
+					break;
+				}
+			case 6 :
+				{
+					c=1;
+					break;
+				}
+			default :
+				{
+					printf("-----------------------------------------------------\n");
+					printf("The Entered Choice is Incorrect.\n");
+					break;
+				}
+		}
+	}
+}
